@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messier 57 - The Ring Nebula</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+            background-color: #e9f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Messier 57 - The Ring Nebula</h1>
+        <img src="https://stsci-opo.org/STScI-01H82G1P61JMNCENZ6S3D6AGHQ.png" alt="Ring Nebula Image">
+        <p>Messier 57, also known as the Ring Nebula, is a planetary nebula located in the constellation Lyra.</p>
+        <p>This nebula is approximately 2,300 light-years away from Earth and is a popular target for amateur astronomers.</p>
+        <p>The Ring Nebula represents a late stage in the evolution of a star similar to our Sun.</p>
+        <p>Its distinctive shape is created by the stellar winds from the dying star at its center, which has shed its outer layers.</p>
+        <p>The nebula's vibrant colors come from ionized gases, primarily hydrogen and oxygen, glowing in response to radiation from the central star.</p>
+
+        <div class="quiz">
+            <h2>Quiz Question</h2>
+            <p>What type of nebula is Messier 57?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="mcq" value="A">
+                <label for="option1">A) Supernova Remnant</label><br>
+                <input type="radio" id="option2" name="mcq" value="B">
+                <label for="option2">B) Planetary Nebula</label><br>
+                <input type="radio" id="option3" name="mcq" value="C">
+                <label for="option3">C) Dark Nebula</label><br>
+                <input type="radio" id="option4" name="mcq" value="D">
+                <label for="option4">D) Emission Nebula</label><br>
+                <button type="button" onclick="checkAnswer()">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('mcq');
+            let selectedOption;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            if (selectedOption === 'B') {
+                resultDiv.textContent = "Correct! Messier 57 is a planetary nebula.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrect. The correct answer is B) Planetary Nebula.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
